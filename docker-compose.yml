@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .  # The root directory, where the Dockerfile is located
+      target: frontend  # Build only the frontend part of the Dockerfile
+    ports:
+      - "3000:3000"  # Expose frontend on port 3000
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: .  # The root directory, where the Dockerfile is located
+      target: backend  # Build only the backend part of the Dockerfile
+    ports:
+      - "5000:5000"  # Expose backend on port 5000
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=root_password
+      - DB_NAME=mydb
+    depends_on:
+      - mysql  # Make sure MySQL is started before the backend
+
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: mydb
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  mysql-data:

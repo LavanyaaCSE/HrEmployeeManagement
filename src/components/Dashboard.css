@@ -1,0 +1,7 @@
+
+  .content-area {
+    margin-left: 180px; /* Adjust content to start after sidebar */
+    padding: 30px 40px; /* Adjusted padding for a spacious feel */
+    width: 100%;
+    box-sizing: border-box;
+  }

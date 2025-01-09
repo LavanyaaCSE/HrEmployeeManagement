@@ -1,0 +1,509 @@
+/* General body and layout */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden; 
+}
+
+/* Main container (holds both sidebar and content) */
+.main-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* Side Navbar */
+.side-navbar {
+  width: 220px;
+  background-color: #ffffff; /* Dark gray */
+  color: #000000;
+  height: 100vh;
+  padding: 20px 0;
+  position: fixed;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.side-navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-navbar li {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+  cursor: pointer;
+}
+
+.side-navbar li:hover,
+.side-navbar li.active {
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.side-navbar li .icon {
+  margin-right: 15px;
+}
+
+.side-navbar li span {
+  font-size: 16px;
+}
+
+.app-container {
+  display: flex;
+}
+
+/* Content Area (right side of the layout) */
+.content-area {
+  margin-left: 200px; /* Adjust content to start after sidebar */
+  padding: 30px 40px; /* Adjusted padding for a spacious feel */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Form Container */
+.enhanced-form-container {
+  padding: 10px 90px; /* More spacious padding */
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px; /* Increased max-width for form */
+  margin: 0 auto; /* Centered form */
+}
+
+.enhanced-form-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+}
+
+.enhanced-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Increased gap for better spacing */
+}
+
+.enhanced-form-input {
+  padding: 14px 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%; /* Ensure all input fields take up the full width */
+  box-sizing: border-box; /* To ensure padding and borders are included in the width calculation */
+}
+
+.enhanced-form-input:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 8px rgba(106, 17, 203, 0.5);
+  outline: none;
+}
+
+.enhanced-form-error {
+  color: #e74c3c;
+  font-size: 12px;
+}
+
+.enhanced-form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px; /* Center the actions */
+}
+
+.enhanced-form-button {
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  color: white;
+  width: 120px; /* Ensure the button takes up full width */
+  margin-right: 10px;
+}
+
+.enhanced-form-button.reset {
+  background: #ddd;
+  color: #333;
+}
+
+.enhanced-form-feedback {
+  margin-top: 30px;
+  font-size: 16px;
+  color: #27ae60;
+  text-align: center;
+}
+
+
+/* Employee List Styles */
+.employee-list-container {
+  margin-top: 40px; /* Increased top margin for spacing */
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+th {
+  font-size: 16px;
+  text-align: left;
+  padding: 12px;
+  color: white; /* Ensure text is white */
+}
+.table-data {
+  font-size: 15px;
+  padding: 8px;
+  text-align: left;
+}
+
+.no-data {
+  text-align: center;
+  padding: 15px;
+  font-style: italic;
+  color: #888;
+}
+
+/* General button styling (for other buttons) */
+.btn {
+  padding: 14px 25px; /* Increased padding for better click area */
+  font-size: 16px;
+  cursor: pointer;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  background-color: white;
+  color: #007bff;
+  margin: 15px 0; /* More margin between buttons */
+}
+
+/* Button hover effect */
+.btn:hover {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+/* Active button styling (blue color when selected) */
+.btn.active {
+  background-color: rgba(148,187,233,1);
+  color: white;
+  border-color: rgba(148,187,233,1);
+}
+
+/* Inactive buttons (white color) */
+.btn:not(.active) {
+  background-color: white;
+  color: #000000;
+  border-color: rgba(148,187,233,1);
+}
+
+/* Disabled or inactive state button */
+.btn:disabled {
+  background-color: #e0e0e0;
+  color: #a0a0a0;
+  border-color: #b0b0b0;
+  cursor: not-allowed;
+}
+
+.dashboard-container .content-area {
+  margin-left: 1800px; /* Adjust content to start after sidebar */
+}
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.charts-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chart-container {
+  flex: 1;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.chart-container h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Adjust for two main rows */
+.charts-row-left {
+  display: flex;
+
+}
+
+.charts-row-right {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1; /* Take less space for Employee Turnover */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 1200px) {
+  .chart-container {
+    flex: 1 1 calc(50% - 20px); /* Two charts per row for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    flex: 1 1 100%; /* One chart per row for small screens */
+  }
+}
+
+/* Stats Cards Container */
+.stats-cards {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+  width: 100%; /* Ensure it takes full width */
+  max-width: 1000px; /* Max width to fit cards within the container */
+  box-sizing: border-box;
+}
+
+/* Individual Stats Cards */
+.card {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 220px; /* Fixed width for each card */
+  margin-left: 10px; /* Ensure some spacing between cards */
+  cursor: pointer;
+  flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+/* Remove margin for the first card */
+.stats-cards .card:first-child {
+  margin-left: 0; /* No left margin for the first card */
+}
+
+/* Hover effect */
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove card stacking on smaller screens */
+@media (max-width: 768px) {
+  .stats-cards {
+    padding-left: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .card {
+    width: 220px; /* Keep the fixed width for smaller screens */
+    margin-left: 10px; /* Keep margin consistent */
+  }
+
+  /* Remove margin for the first card on smaller screens as well */
+  .stats-cards .card:first-child {
+    margin-left: 0;
+  }
+}
+
+
+/* Form container with spacious padding and box shadow */
+.onboarding-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Enhanced Form styling */
+.onboarding-form {
+  padding: 20px 90px; /* Spacious padding to match the modern UI */
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px; /* Max-width for form */
+  background-color: #ffffff;
+  margin: 0 auto; /* Centered form */
+}
+
+/* Form title styling */
+.onboarding-form-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+}
+
+/* Group form elements */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased gap for better spacing */
+}
+
+/* Label styling */
+label {
+  font-weight: 500;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Input fields styling */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="file"] {
+  padding: 14px 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%; /* Ensure all input fields take up the full width */
+  background-color: #f7f7f7;
+  transition: border 0.3s ease-in-out;
+  box-sizing: border-box; /* To ensure padding and borders are included in the width calculation */
+}
+
+/* Input fields focus effect */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="file"]:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 8px rgba(106, 17, 203, 0.5);
+  outline: none;
+}
+
+/* Progress bar styling */
+.progress-bar {
+  margin-top: 20px;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+progress {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #e9ecef;
+}
+
+/* Submit button styling */
+.form-actions {
+  text-align: center;
+  margin-top: 30px;
+}
+
+button[type="submit"] {
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 120px; /* Ensure the button spans the width of the form */
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(128,169,233,1) 100%);
+}
+
+button[type="submit"]:active {
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(98,135,208,1) 100%);
+}
+
+/* Feedback message */
+.enhanced-form-feedback {
+  margin-top: 30px;
+  font-size: 16px;
+  color: #27ae60;
+  text-align: center;
+}
+
+
+
+/* General table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  font-size: 14px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+thead {
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  color: white;
+}
+
+th {
+  color: white; /* Ensure text color is white for the headers */
+}
+td {
+  border-top: 1px solid #ddd;
+}
+
+/* Input Fields */
+input[type="time"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box; /* Ensures padding is included in the width */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Select Fields */
+select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
